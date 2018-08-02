@@ -40,8 +40,6 @@ Make sure you store the token (e.g. in your password manager), as you will not b
 
 ## Setting up the Python environment
 
-Due to an annoying lack of a feature in pipenv, open Pipfile, and change `tensorflow` to `tensorflow-gpu`.
-
 Run `pipenv install --dev` to install all required packages into a virtual environment.
 
 Make sure to precede all commands with `pipenv run` from now on, to make sure that you are using the correct environment.
