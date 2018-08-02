@@ -28,13 +28,20 @@ def line_lstm_ctc(input_shape, output_shape, window_width=28, window_stride=14):
     gpu_present = len(device_lib.list_local_devices()) > 1
     lstm_fn = CuDNNLSTM if gpu_present else LSTM
 
+    # Your code should use slide_window and extract image patches from image_input.
+    # Pass a convolutional model over each image patch to generate a feature vector per window.
+    # Pass these features through one or more LSTM layers.
+    # Convert the lstm outputs to softmax outputs.
+    # Note that lstms expect a input of shape (num_batch_size, num_timesteps, feature_length).
+
     ##### Your code below (Lab 3)
 
     ##### Your code above (Lab 3)
 
-    def temp(x, num_windows=num_windows):
-        return x * num_windows
-    input_length_processed = Lambda(temp)(input_length)
+    input_length_processed = Lambda(
+        lambda x, num_windows=None: x * num_windows,
+        arguments={'num_windows': num_windows}
+    )(input_length)
 
     ctc_loss_output = Lambda(
         lambda x: K.ctc_batch_cost(x[0], x[1], x[2], x[3]),
