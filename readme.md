@@ -7,6 +7,8 @@ Welcome!
 Go to https://app.wandb.ai/profile and enter the code that we will share with you at the session into Access Code field.
 This will drop you into a JupyterLab instance with a couple of GPUs that you will use in these labs.
 
+**From now on, everything you do will be in that instance.**
+
 ## Checking out the repo
 
 Start by cloning the repo and going into it
