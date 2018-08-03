@@ -18,6 +18,11 @@ def mlp(input_shape: Tuple[int, ...],
     model = Sequential()
     ## maybe mention that input_shape needs to be passed to the first layer of the model ?? - it can be a confusing common error
     ##### Your code below (Lab 1)
+    model.add(Flatten(input_shape=input_shape))
+    for _ in range(num_layers):
+        model.add(Dense(layer_size, activation='relu'))
+        model.add(Dropout(dropout_amount))
+        model.add(Dense(num_classes, activation='softmax'))
 
     ##### Your code above (Lab 1)
 
