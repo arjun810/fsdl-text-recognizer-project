@@ -1,6 +1,10 @@
 # Lab 2
 
+In this lab we will implement convolutional networks: first for character recognition, and then for recognizing text in an image of a handwritten line.
+
 ## LeNet
+
+To warm up, let's implement an old classic.
 
 Add enough code to `networks/lenet.py` to be able to run
 
@@ -8,13 +12,13 @@ Add enough code to `networks/lenet.py` to be able to run
 pipenv run training/run_experiment.py '{"dataset": "EmnistDataset", "model": "CharacterModel", "network": "lenet"}'
 ```
 
-Training will take a few minutes to train.
-
-You should see an improvement in accuracy compared to the MLP model we trained in the previous lab.
+Training will take about six minutes.
+Leave it running while we go on to look at EmnistLines.
 
 ## Emnist Lines
 
-(Explain generating the dataset, look at the notebook)
+We are generating synthetic data from composing EMNIST characters into a line, sampling text from the Brown corpus!
+We can see the results by opening up `notebooks/02-look-at-emnist-lines.ipynb`.
 
 ## Train a Sliding Window LeNet on EmnistLines
 
@@ -24,6 +28,7 @@ Add code to `text_recognizer/networks/line_cnn_sliding_window.py` to make the fo
 pipenv run training/run_experiment.py '{"dataset": "EmnistLinesDataset", "model": "LineModel", "network": "line_cnn_sliding_window"}'
 ```
 
+Again, it will take a few minutes to train the model.
 
 You should be able to get to ~70% character accuracy with the default params.
 
@@ -39,7 +44,7 @@ When you train with
 pipenv run training/run_experiment.py '{"dataset": "EmnistLinesDataset", "model": "LineModel", "network": "line_cnn_all_conv", "network_args": {"window_width": 16, "window_stride": 8}}'
 ```
 
-You should be getting roughly the same accuracy, and see slightly shorter runtimes: for me, it's 77ms/step vs 100ms/step for the previous model.
+You should be getting roughly the same accuracy, and see slightly shorter runtimes: for me, it's 200ms/step vs 250ms/step for the previous model.
 
 The amount of speedup depends on exactly how much windows overlap, so play around with those parameters.
 For example:
