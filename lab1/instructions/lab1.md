@@ -20,7 +20,7 @@ pipenv run training/run_experiment.py '{"dataset": "EmnistDataset", "model": "Ch
 
 ## Testing
 
-Your network is trained, but you need to write a bit more code to get the `CharacterModel` to predict using it.
+Your network is trained, but you need to write a bit more code to get the `CharacterModel` to use it to predict.
 Open up `text_recognizer/models/character_model.py` and write some code there to make it work.
 You can test that it works by running
 
