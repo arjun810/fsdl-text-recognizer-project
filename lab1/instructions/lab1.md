@@ -3,7 +3,7 @@
 
 ## Training the network
 
-You will have to add a tiny bit of code to `text_recognizer/models/mlp.py` before being able to train.
+You will have to add a tiny bit of code to `text_recognizer/networks/mlp.py` before being able to train.
 When you finish, you can train a canonical model and save the weights:
 
 ```sh
