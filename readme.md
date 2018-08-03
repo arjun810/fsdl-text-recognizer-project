@@ -11,7 +11,7 @@ This will drop you into a JupyterLab instance with a couple of GPUs that you wil
 
 ## Checking out the repo
 
-Start by cloning the repo and going into it
+In the JupyterLab's terminal, start by cloning the repo and going into it:
 
 ```
 git clone https://github.com/gradescope/fsdl-text-recognizer-project.git
